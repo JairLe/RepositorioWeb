@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MecanicaLTE</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            font-family: 'Raleway', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .principal {
+            background-color: #ffffff;
+            border: 2px solid #ececec;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            height: 100vh;
+            width: 100vw;
+            box-sizing: border-box;
+            overflow: auto;
+        }
+
+        .titulo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .titulo img {
+            border-radius: 50%;
+        }
+
+        .titulo h2 {
+            color: #007bff;
+            font-family: 'Lobster', cursive;
+            font-size: 36px;
+            margin: 10px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .formulario {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 30px;
+            margin-top: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .formulario h3 {
+            color: #007bff;
+            margin-bottom: 25px;
+            text-align: center;
+            font-family: 'Lobster', cursive;
+            font-size: 24px;
+        }
+
+        .mb-3 {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            font-weight: bold;
+            color: #666;
+        }
+
+        .form-control {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            width: 100%;
+            transition: border-color 0.3s ease;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .form-control:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .error-msg {
+            color: #ff0000;
+            display: none;
+            font-size: 12px;
+        }
+
+        .btn-enviar {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            padding: 10px 30px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: block;
+            margin: 0 auto;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .btn-enviar:hover {
+            background-color: #0056b3;
+        }
+
+        .info-text {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #666;
+            font-family: 'Raleway', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="principal">
+        <div class="titulo">
+            <img src="img/logo.png" alt="Logo" class="img-fluid" width="70" height="70">
+            <h2>MecanicaLTE</h2>
+        </div>
+
+        <div class="formulario">
+            <h3>Formulario de Contribución</h3>
+            <form id="contribucion-form">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre:</label>
+                    <input type="text" class="form-control" id="nombre" required>
+                    <span id="nombre-error" class="error-msg">Por favor, introduce tu nombre.</span>
+                </div>
+                <div class="mb-3">
+                    <label for="contribucion" class="form-label">¿Qué quieres contribuir?</label>
+                    <textarea class="form-control" id="contribucion" rows="3" required></textarea>
+                    <span id="contribucion-error" class="error-msg">Por favor, especifica tu contribución.</span>
+                </div>
+                <p class="info-text">Se abrirá el programa de correo predeterminado de tu PC, en el cual deberás adjuntar lo que quieres enviar manualmente.</p>
+                <button type="submit" class="btn-enviar">Abrir Cliente de Correo Predeterminado</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('contribucion-form').addEventListener('submit', function(event) {
+            var nombreInput = document.getElementById('nombre');
+            var contribucionInput = document.getElementById('contribucion');
+            var nombreError = document.getElementById('nombre-error');
+            var contribucionError = document.getElementById('contribucion-error');
+
+            if (!nombreInput.value) {
+                nombreError.style.display = 'block';
+                event.preventDefault();
+            } else {
+                nombreError.style.display = 'none';
+            }
+
+            if (!contribucionInput.value) {
+                contribucionError.style.display = 'block';
+                event.preventDefault();
+            } else {
+                contribucionError.style.display = 'none';
+            }
+        });
+
+        document.getElementById('contribucion-form').addEventListener('submit', function(event) {
+            var destinatario = 'MecanicaMLTE@Gmail.com';
+            var asunto = 'Nueva contribución';
+            var cuerpo = 'Nombre: ' + document.getElementById('nombre').value + '\n' + 'Contribución: ' + document.getElementById('contribucion').value;
+            var mailtoLink = 'mailto:' + destinatario + '?subject=' + encodeURIComponent(asunto) + '&body=' + encodeURIComponent(cuerpo);
+
+            window.location.href = mailtoLink;
+            event.preventDefault();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manuales - MecanicaLTE</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-color: rgb(250, 250, 250);
+            padding: 20px;
+        }
+
+        h1 {
+            font-family: 'Lobster', cursive;
+            color: #007bff;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .manual {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .manual:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .manual-content {
+            flex-grow: 1;
+            margin-right: 20px;
+        }
+
+        .manual-title {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .manual-desc {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .manual-link {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .manual-link:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        .manual-image {
+            width: 150px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Manuales</h1>
+    <div class="manual">
+        <div class="manual-content">
+            <div class="manual-title">Manual de Honda CB190R</div>
+            <div class="manual-desc">
+                <strong>Nombre:</strong> Manual de Servicio CB190R<br>
+                <strong>Definición:</strong> Este manual proporciona información detallada sobre el funcionamiento y mantenimiento de una Honda CB190R.
+            </div>
+            <a target="_blank" class="manual-link" href="Manuales/manual cb190 taller.pdf" download>Descargar</a>
+        </div>
+        <img class="manual-image" src="img manuales/CB190R.png" alt="Manual de Honda">
+    </div>
+
+    <div class="manual">
+        <div class="manual-content">
+            <div class="manual-title">Manual de Yamaha MT07</div>
+            <div class="manual-desc">
+                <strong>Nombre:</strong> Manual de Servicio MT07<br>
+                <strong>Definición:</strong> Este manual ofrece una guía completa sobre las características y el mantenimiento de una MT07.
+            </div>
+            <a target="_blank" class="manual-link" href="Manuales/manual_de_taller_yamaha_mt_2016.pdf" download>Descargar</a>
+        </div>
+        <img class="manual-image" src="img manuales/yamaha_mt_07.png" alt="Manual de Yamaha">
+    </div>
+
+    <div class="manual">
+        <div class="manual-content">
+            <div class="manual-title">Manual de Suzuki Gixxer 150</div>
+            <div class="manual-desc">
+                <strong>Nombre:</strong> Manual de Servicio Gixxer 150<br>
+                <strong>Definición:</strong> En este manual se encuentran todas las instrucciones necesarias para el uso y cuidado de motocicletas Gixxer 150.
+            </div>
+            <a target="_blank" class="manual-link" href="Manuales/Gixxer 150 manual de servicio.pdf" download>Descargar</a>
+        </div>
+        <img class="manual-image" src="img manuales/gs150.png" alt="Manual de Suzuki">
+    </div>
+</body>
+
+</html>
