@@ -1,1 +1,39 @@
-hola
+-----Configuracion inicial-------------
+$ git config --global user.name "Juan Perez"
+$ git config --global user.email "juan.perez@inacap.cl"
+$ git config --global core.editor "code --wait"
+
+
+-----Iniciar Repositorio------
+git init
+
+-------Clonar repositorio-------
+git clone link_repositorio
+cd nombre_carpeta_repositorio
+
+----Eliminar rama local-----------
+git branch -d nombre_de_la_rama
+
+
+----Eliminar rama Remota----------
+git push origin --delete nombre_de_la_rama
+
+
+-------Crear rama-----------
+git branch nombre_de_la_nueva_rama
+
+
+------Cambiar de rama---------
+git checkout nombre_de_la_rama
+git switch nombre_de_la_rama
+
+
+-----Agregar archivos------
+git add nombre_archivo
+git commit -m "mensaje"
+
+
+-----Subir cambios--------
+git push
+
+
